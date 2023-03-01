@@ -10,6 +10,13 @@ echo " <br> Agora são " . date('H:i:s');
 
 // exibindo o horário de 0 a 12 com o formato am e pm
 echo " <br> Agora são " . date('h:i:s a');
+
+//exibindo o dia da semana
+$diasemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado');
+$data = date('Y-m-d');
+$diasemana_numero = date('w', strtotime($data));
+echo " , ";
+echo $diasemana[$diasemana_numero];
 ?>
 
 
