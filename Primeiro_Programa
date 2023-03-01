@@ -4,9 +4,13 @@ date_default_timezone_set('America/Sao_Paulo');
 echo "Hoje é dia " . date('d/m/Y');
 echo " <br> Agora são " . date('H:i:s');
 
+// o "y" minúsculo no date exibe apenas os dois últimos dígitos do ano
 echo "Hoje é dia " . date('d/m/y');
 echo " <br> Agora são " . date('H:i:s');
+
+// exibindo o horário de 0 a 12 com o formato am e pm
+echo " <br> Agora são " . date('h:i:s a');
 ?>
 
-// o "y" minúsculo no date exibe apenas os dois últimos dígitos do ano
+
 // " . " concatena informações
