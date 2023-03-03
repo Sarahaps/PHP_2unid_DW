@@ -4,14 +4,15 @@
 <h1><?php  echo "Calendário 3C"; ?></h1>
 
 <?php function linha($semana){
-    echo "<tr>
-                <td>{$semana[0]}</td>
-                <td>{$semana[1]}</td>
-                <td>{$semana[2]}</td>
-                <td>{$semana[3]}</td>
-                <td>{$semana[4]}</td>
-                <td>{$semana[5]}</td>
-                <td>{$semana[6]}</td>";
+   echo "<tr>";
+        for ($i = 0; $i <= 6; $i++) {
+        if (isset($semana[$i])) {
+            echo "<td>{$semana[$i]}</td>";
+        } else {
+            echo "<td></td>";
+        }
+        }
+   echo "</tr>";
 };
 
 function calendario(){
@@ -27,6 +28,7 @@ function calendario(){
 
     $dia++;  
     };
+    linha($semana);
 };
 ?>
 
