@@ -3,16 +3,30 @@
 
 <h1><?php  echo "Calendário 3C"; ?></h1>
 
-// função para a criação das linhas
-<?php function linha(){
+<?php function linha($semana){
     echo "<tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>";
+                <td>{$semana[0]}</td>
+                <td>{$semana[1]}</td>
+                <td>{$semana[2]}</td>
+                <td>{$semana[3]}</td>
+                <td>{$semana[4]}</td>
+                <td>{$semana[5]}</td>
+                <td>{$semana[6]}</td>";
+};
+
+function calendario(){
+    $dia = 1;
+    $semana = array();
+
+    while ($dia <= 31) {
+        array_push($semana, $dia);
+        if (count($semana) == 7){
+            linha($semana);
+            $semana = array();
+        };
+
+    $dia++;  
+    };
 };
 ?>
 
@@ -26,9 +40,5 @@
         <th>Sex</th>
         <th>Sáb</th>
     </tr>
-    <?php linha(); ?>
-    <?php linha(); ?>
-    <?php linha(); ?>
-    <?php linha(); ?>
-    <?php linha(); ?>
+    <?php calendario();?>
 </table>
