@@ -1,0 +1,34 @@
+// ANTES DE RODAR AS LINHAS DESTE CÓDIGO, PRIMEIRO DEVE-SE CRIAR A PÁGINA EM PHP, COM O XAMPP ATIVADO
+// CÓDIGO PARA CRIAR A PÁG. = <?php echo "teste"; ?>
+
+<h1><?php  echo "Calendário 3C"; ?></h1>
+
+// função para a criação das linhas
+<?php function linha(){
+    echo "<tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>";
+};
+?>
+
+<table border="1">
+    <tr>
+        <th>Dom</th>
+        <th>Seg</th>
+        <th>Ter</th>
+        <th>Qua</th>
+        <th>Qui</th>
+        <th>Sex</th>
+        <th>Sáb</th>
+    </tr>
+    <?php linha(); ?>
+    <?php linha(); ?>
+    <?php linha(); ?>
+    <?php linha(); ?>
+    <?php linha(); ?>
+</table>
