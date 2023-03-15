@@ -1,7 +1,29 @@
 // ANTES DE RODAR AS LINHAS DESTE CÓDIGO, PRIMEIRO DEVE-SE CRIAR A PÁGINA EM PHP, COM O XAMPP ATIVADO
 // CÓDIGO PARA CRIAR A PÁG. = <?php echo "teste"; ?>
 
+
 <h1><?php  echo "Calendário 3C"; ?></h1>
+
+<?php 
+date_default_timezone_set('America/Sao_Paulo');
+    $hora = date('H');
+    if ($hora >= 6 && $hora <= 12){
+        echo "Bom Dia";
+    }
+    echo " <br> Agora são: ". date('<br> H:i:s <br>');
+    
+    $hora = date('H');
+    if ($hora >= 13 && $hora <=17){
+        echo "Boa Tarde";
+    }
+    
+    $hora = date('H');
+    if ($hora >= 18 && $hora <=23) {
+        echo "Boa Noite";
+    }
+
+    echo " <br> Hoje é dia: ". date('<br> d/m/Y <br>');
+?>
 
 <?php function linha($semana){
    echo "<tr>";
