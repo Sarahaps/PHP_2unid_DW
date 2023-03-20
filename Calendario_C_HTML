@@ -1,16 +1,12 @@
-// ANTES DE RODAR AS LINHAS DESTE CÓDIGO, PRIMEIRO DEVE-SE CRIAR A PÁGINA EM PHP, COM O XAMPP ATIVADO
-// CÓDIGO PARA CRIAR A PÁG. = <?php echo "teste"; ?>
-
-
 <h1><?php  echo "Calendário 3C"; ?></h1>
 
-<?php 
+<?php
+// Questão 1 (desafios cap. 3)
 date_default_timezone_set('America/Sao_Paulo');
     $hora = date('H');
     if ($hora >= 6 && $hora <= 12){
         echo "Bom Dia";
     }
-    echo " <br> Agora são: ". date('<br> H:i:s <br>');
     
     $hora = date('H');
     if ($hora >= 13 && $hora <=17){
@@ -22,20 +18,25 @@ date_default_timezone_set('America/Sao_Paulo');
         echo "Boa Noite";
     }
 
+    echo " <br> Agora são: ". date('<br> H:i:s <br>');
     echo " <br> Hoje é dia: ". date('<br> d/m/Y <br>');
 ?>
 
 <?php function linha($semana){
+// Questão 2 (desafios cap. 3)
    echo "<tr>";
         for ($i = 0; $i <= 6; $i++) {
-        if (isset($semana[$i])) {
-            echo "<td>{$semana[$i]}</td>";
-        } else {
-            echo "<td></td>";
-        }
-        }
-   echo "</tr>";
-};
+            if ((isset($semana[$i])) && ($semana[$i] == date('d'))){
+                echo "<td><strong>$semana[$i]</strong></td>";
+            } else if (isset($semana[$i])){
+                echo "<td>{$semana[$i]}</td>";
+            }else{
+                echo "<td></td>";
+            }
+        }   
+}
+
+echo"</tr>";  
 
 function calendario(){
     $dia = 1;
