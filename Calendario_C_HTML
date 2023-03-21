@@ -1,36 +1,40 @@
 <h1><?php  echo "Calendário 3C"; ?></h1>
 
 <?php
-// Questão 1 (desafios cap. 3)
+// Aluno (a): Sarah Araújo Pimetel de Sousa, 3º C
+// Desafio 1 (Cap. 3)
 date_default_timezone_set('America/Sao_Paulo');
     $hora = date('H');
     if ($hora >= 6 && $hora <= 12){
         echo "Bom Dia";
     }
     
-    $hora = date('H');
     if ($hora >= 13 && $hora <=17){
         echo "Boa Tarde";
     }
     
-    $hora = date('H');
     if ($hora >= 18 && $hora <=23) {
         echo "Boa Noite";
     }
 
-    echo " <br> Agora são: ". date('<br> H:i:s <br>');
+    echo " <br> Agora são exatamente: ". date('<br> H:i <br>'). " min.";
     echo " <br> Hoje é dia: ". date('<br> d/m/Y <br>');
 ?>
 
 <?php function linha($semana){
-// Questão 2 (desafios cap. 3)
+// Desafio 2 (Cap. 3)
    echo "<tr>";
         for ($i = 0; $i <= 6; $i++) {
             if ((isset($semana[$i])) && ($semana[$i] == date('d'))){
                 echo "<td><strong>$semana[$i]</strong></td>";
+            } // Desafio 3 (Cap. 3) 
+            else if ((isset($semana[$i])) && ($semana[$i] == $semana['0'])){
+                echo "<td><font color='red'>{$semana[$i]}</font></td>";
+            } else if ((isset($semana['6'])) && ($semana[$i] == $semana['6'])){
+                echo "<td><strong>{$semana[$i]}</strong></td>";
             } else if (isset($semana[$i])){
                 echo "<td>{$semana[$i]}</td>";
-            }else{
+            } else{
                 echo "<td></td>";
             }
         }   
