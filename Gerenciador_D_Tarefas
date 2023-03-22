@@ -10,4 +10,6 @@
     </body> 
 </html>
 
+<?php // usar php com html: precisa de "<form>" e "name = ''" ?>
+
 
