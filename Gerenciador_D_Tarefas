@@ -1,15 +1,46 @@
 <html>
-    <head><title> Gerenciador de Tarefas </title></head>
-    <body> 
-        <h1>Gerenciador de Tarefas</h1>
-        <form> 
-            <fieldset><legend>Nova tarefa</legend> 
-            <label> Tarefa: <input type="text" name="nome" /></label> 
-            <input type="submit" value="Cadastrar" /></fieldset> 
-        </form>
-    </body> 
-</html>
+	<head>
+		<title>Gerenciador de Tarefas</title>
+	</head>
+	<body>
+		<h1>Gerenciador de Tarefas</h1>
+		<form>
+			<fieldset>
+				<legend>Nova tarefa</legend>
+				<label>
+					Tarefa:
+					<input type="text" name="nomeTarefa" />
+				</label>
+                <br>
+                <br>
+               <!-- 
+                <label>
+					Descrição:
+					<input type="text" name="descricao" />
+				</label> 
+                -->
+				<input type="submit" value="Fixar" />
+			</fieldset>
+            <br>
+            <?php
+            if (isset($_GET['nomeTarefa'])) {
+                echo "Atividades pendentes: ".$_GET['nomeTarefa']. "<br>";
+                }
+            /*
+            if (isset($_GET['descricao'])) {
+                echo "Descrição da Tarefa: ".$_GET['descricao'];
+                }
+            */
 
-<?php // usar php com html: precisa de "<form>" e "name = ''" ?>
+                $lista_tarefas = array();
+                if (isset($_GET['nomeTarefa'])) {
+                $lista_tarefas[] = $_GET['nomeTarefa'];
+                }
+
+            ?>
+
+		</form>
+	</body>
+</html>
 
 
